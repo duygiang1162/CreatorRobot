@@ -1,0 +1,2 @@
+my_mira_description
+-DCATKIN_DEVEL_PREFIX=/home/ruyzang/urdf_learn/devel -DCMAKE_INSTALL_PREFIX=/home/ruyzang/urdf_learn/install -G Unix Makefiles
