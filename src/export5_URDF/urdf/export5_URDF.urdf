@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="export5_URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00247901953772472 -7.72684605193641E-06 -0.0100192436380275"
+        rpy="0 0 0" />
+      <mass
+        value="1.38302095239097" />
+      <inertia
+        ixx="0.00172933115832834"
+        ixy="-9.10846177365511E-09"
+        ixz="7.65352924875858E-16"
+        iyy="0.00128903116695102"
+        iyz="-1.46644968679531E-16"
+        izz="0.00281036572892894" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0.00577544245185513 0.000608180456644292 -0.0195616906884153"
+        rpy="0 0 0" />
+      <mass
+        value="0.142994095653187" />
+      <inertia
+        ixx="4.62767161181515E-05"
+        ixy="-8.53572518984279E-07"
+        ixz="3.62184026396535E-06"
+        iyy="7.34746440088867E-05"
+        iyz="-2.04304178805651E-07"
+        izz="0.000107960183716792" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0031638 -0.00011308 0.044"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rf_hip_link">
+    <inertial>
+      <origin
+        xyz="0.0511054670163394 -0.00640917768004473 -0.00656360453138677"
+        rpy="0 0 0" />
+      <mass
+        value="0.300997066732491" />
+      <inertia
+        ixx="0.00010684588163136"
+        ixy="1.08806377383141E-09"
+        ixz="8.90083581989902E-09"
+        iyy="0.000249480012816438"
+        iyz="1.34842317361947E-05"
+        izz="0.000243506037107833" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.1325 -0.07989 -0.029298"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0668128326099894 -0.000201076465554229 -0.0492390564779382"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446459752499" />
+      <inertia
+        ixx="4.55350835364376E-05"
+        ixy="-9.11870718885065E-07"
+        ixz="-5.53553247981242E-05"
+        iyy="0.000129422913083595"
+        iyz="-7.2935535177326E-07"
+        izz="8.5181340447565E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.027 -0.054174 0.014192"
+      rpy="0 0 0" />
+    <parent
+      link="rf_hip_link" />
+    <child
+      link="rf_h_upper_link" />
+    <axis
+      xyz="0 -0.99986 0.016471" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_lower_link">
+    <inertial>
+      <origin
+        xyz="0.056017 0.0023415 0.053896"
+        rpy="0 0 0" />
+      <mass
+        value="0.11781" />
+      <inertia
+        ixx="0.00010723"
+        ixy="-1.1757E-07"
+        ixz="-7.1377E-06"
+        iyy="0.00021298"
+        iyz="-1.7538E-06"
+        izz="0.00010657" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_lower_joint"
+    type="revolute">
+    <origin
+      xyz="-0.070415 -0.0044887 -0.14499"
+      rpy="0 0 0" />
+    <parent
+      link="rf_h_upper_link" />
+    <child
+      link="rf_lower_link" />
+    <axis
+      xyz="0 -0.99986 0.016471" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.0037487 0.000142 0.0086209"
+        rpy="0 0 0" />
+      <mass
+        value="0.038335" />
+      <inertia
+        ixx="1.0486E-05"
+        ixy="4.7236E-08"
+        ixz="2.8672E-06"
+        iyy="1.4027E-05"
+        iyz="-1.3594E-07"
+        izz="5.777E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.84314 0.81569 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rf_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.046334 -0.0041833 -0.077876"
+      rpy="0 0 0" />
+    <parent
+      link="rf_lower_link" />
+    <child
+      link="rf_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rh_hip_link">
+    <inertial>
+      <origin
+        xyz="-0.05110672759095 -0.00625664363822043 -0.00670914973811432"
+        rpy="0 0 0" />
+      <mass
+        value="0.300997066909679" />
+      <inertia
+        ixx="0.000106845881604468"
+        ixy="8.75145779679015E-10"
+        ixz="9.63300331451179E-09"
+        iyy="0.00024885960696754"
+        iyz="1.36117389788136E-05"
+        izz="0.000244126442943632" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.266666666666667 0.266666666666667 0.266666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1325 -0.07989 -0.029298"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rh_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0668128321368547 0.000930459071025569 -0.0492306746282527"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446460508965" />
+      <inertia
+        ixx="4.55350835382334E-05"
+        ixy="3.6040038273224E-07"
+        ixz="-5.53616618595437E-05"
+        iyy="0.000129433062665089"
+        iyz="2.87789798758398E-07"
+        izz="8.51711908871302E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="-0.072 -0.054485 0.012943"
+      rpy="0 0 0" />
+    <parent
+      link="rh_hip_link" />
+    <child
+      link="rh_h_upper_link" />
+    <axis
+      xyz="0 -0.99998 -0.0065096" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_lower_link">
+    <inertial>
+      <origin
+        xyz="0.0560170206860614 0.0011023555920589 0.0539357041301582"
+        rpy="0 0 0" />
+      <mass
+        value="0.117810135921722" />
+      <inertia
+        ixx="0.000107230602962527"
+        ixy="4.64807153561257E-08"
+        ixz="-7.13851571083036E-06"
+        iyy="0.000213006933683945"
+        iyz="6.9269327687283E-07"
+        izz="0.00010654795619169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_lower_joint"
+    type="revolute">
+    <origin
+      xyz="-0.070415 -0.0011558 -0.14505"
+      rpy="0 0 0" />
+    <parent
+      link="rh_h_upper_link" />
+    <child
+      link="rh_lower_link" />
+    <axis
+      xyz="0 0.99998 0.0065096" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00374869468568095 -5.61344255122775E-05 0.00862184018063239"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346011874611" />
+      <inertia
+        ixx="1.04864883148301E-05"
+        ixy="-1.86624067397946E-08"
+        ixz="2.86749584033282E-06"
+        iyy="1.40291004399198E-05"
+        iyz="5.37409927361689E-08"
+        izz="5.77509132612842E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/rh_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.046334 -0.0023926 -0.077951"
+      rpy="0 0 0" />
+    <parent
+      link="rh_lower_link" />
+    <child
+      link="rh_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lf_hip_link">
+    <inertial>
+      <origin
+        xyz="0.051135385907403 0.00634416180976899 -0.00662645607036255"
+        rpy="0 0 0" />
+      <mass
+        value="0.300997066785474" />
+      <inertia
+        ixx="0.000106845881608904"
+        ixy="9.9684339023789E-10"
+        ixz="-9.62096426554272E-09"
+        iyy="0.00024921659567892"
+        iyz="-1.35417623837856E-05"
+        izz="0.000243769454228271" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.1325 0.07989 -0.029298"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lf_hip_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0589927944433671 -0.000223769982119038 -0.0583805574455977"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446460117747" />
+      <inertia
+        ixx="6.22033266932144E-05"
+        ixy="3.88448082434307E-07"
+        ixz="-5.87170529724645E-05"
+        iyy="0.000129432262514428"
+        iyz="4.03439937117398E-07"
+        izz="6.85037478736184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.027 0.054311 0.013657"
+      rpy="0 0 0" />
+    <parent
+      link="lf_hip_link" />
+    <child
+      link="lf_h_upper_link" />
+    <axis
+      xyz="0 0.99998 0.0066153" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_lower_link">
+    <inertial>
+      <origin
+        xyz="0.04656831523749 -0.0018373803077254 0.0580337557081891"
+        rpy="0 0 0" />
+      <mass
+        value="0.117810135956518" />
+      <inertia
+        ixx="9.11042914626449E-05"
+        ixy="5.49389299838499E-08"
+        ixz="-8.30285013750504E-06"
+        iyy="0.000213007482434997"
+        iyz="5.97974353460945E-07"
+        izz="0.000122673718941518" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_lower_joint"
+    type="revolute">
+    <origin
+      xyz="-0.040592 0.0030586 -0.1449"
+      rpy="0 0 0" />
+    <parent
+      link="lf_h_upper_link" />
+    <child
+      link="lf_lower_link" />
+    <axis
+      xyz="0 -0.99998 -0.0066153" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00620125999523695 -4.67563553129546E-05 0.00706641170175271"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346003330871" />
+      <inertia
+        ixx="8.38077902670286E-06"
+        ixy="-2.44931975928254E-08"
+        ixz="3.70267977694991E-06"
+        iyy="1.40291809776997E-05"
+        iyz="4.06849555311777E-08"
+        izz="7.88071962868401E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lf_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.067908 0.0032973 -0.060054"
+      rpy="0 0 0" />
+    <parent
+      link="lf_lower_link" />
+    <child
+      link="lf_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lh_hip_link">
+    <inertial>
+      <origin
+        xyz="-0.0510768085973683 0.00657150618104135 -0.00640107920474792"
+        rpy="0 0 0" />
+      <mass
+        value="0.300997071527801" />
+      <inertia
+        ixx="0.000106845881773414"
+        ixy="1.31947016759233E-09"
+        ixz="-8.87101127534872E-09"
+        iyy="0.000250153711398057"
+        iyz="-1.33156144725748E-05"
+        izz="0.000242832338677794" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1325 0.07989 -0.029298"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lh_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.058992795180726 0.00181321537534801 -0.0583528224949297"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446458753431" />
+      <inertia
+        ixx="6.22033266883486E-05"
+        ixy="2.43680055484232E-06"
+        ixz="-5.86677526732737E-05"
+        iyy="0.000129329962807109"
+        iyz="2.52690861222676E-06"
+        izz="6.86060475531218E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="-0.072 0.053801 0.015544"
+      rpy="0 0 0" />
+    <parent
+      link="lh_hip_link" />
+    <child
+      link="lh_h_upper_link" />
+    <axis
+      xyz="0 0.99914 0.0415" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_lower_link">
+    <inertial>
+      <origin
+        xyz="0.0465683155602796 -0.00386101113616596 0.0579343201592794"
+        rpy="0 0 0" />
+      <mass
+        value="0.11781013696499" />
+      <inertia
+        ixx="9.11042914666682E-05"
+        ixy="3.44584982645921E-07"
+        ixz="-8.29587849784415E-06"
+        iyy="0.000212855823065441"
+        iyz="3.74626943283949E-06"
+        izz="0.000122825378322347" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_lower_joint"
+    type="revolute">
+    <origin
+      xyz="-0.040592 0.0081123 -0.14471"
+      rpy="0 0 0" />
+    <parent
+      link="lh_h_upper_link" />
+    <child
+      link="lh_lower_link" />
+    <axis
+      xyz="0 -0.99914 -0.0415" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00620125999919491 -0.000293269095868104 0.00706047828477652"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346003235047" />
+      <inertia
+        ixx="8.3807790193781E-06"
+        ixy="-1.53661693249376E-07"
+        ixz="3.69957099263319E-06"
+        iyy="1.40188595348517E-05"
+        iyz="2.54969993924934E-07"
+        izz="7.89104107147032E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://export5_URDF/meshes/lh_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.067908 0.0053906 -0.059903"
+      rpy="0 0 0" />
+    <parent
+      link="lh_lower_link" />
+    <child
+      link="lh_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

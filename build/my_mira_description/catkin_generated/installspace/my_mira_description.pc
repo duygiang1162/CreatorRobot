@@ -1,4 +1,4 @@
-prefix=/home/ruyzang/urdf_learn/install
+prefix=/home/duygiang/CreatorRobot/install
 
 Name: my_mira_description
 Description: Description of my_mira_description

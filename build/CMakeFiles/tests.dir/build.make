@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruyzang/urdf_learn/src
+CMAKE_SOURCE_DIR = /home/duygiang/CreatorRobot/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruyzang/urdf_learn/build
+CMAKE_BINARY_DIR = /home/duygiang/CreatorRobot/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/ruyzang/urdf_learn/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruyzang/urdf_learn/src /home/ruyzang/urdf_learn/src /home/ruyzang/urdf_learn/build /home/ruyzang/urdf_learn/build /home/ruyzang/urdf_learn/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/duygiang/CreatorRobot/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/duygiang/CreatorRobot/src /home/duygiang/CreatorRobot/src /home/duygiang/CreatorRobot/build /home/duygiang/CreatorRobot/build /home/duygiang/CreatorRobot/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

@@ -1,0 +1,8 @@
+prefix=/home/duygiang/CreatorRobot/devel
+
+Name: export5_URDF
+Description: Description of export5_URDF
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
