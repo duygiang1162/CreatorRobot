@@ -7,10 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH='/home/duygiang/CreatorRobot/devel:/opt/ros/noetic'
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
-export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
+export CMAKE_PREFIX_PATH="/home/duygiang/CreatorRobot/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/duygiang/CreatorRobot/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/duygiang/CreatorRobot/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/duygiang/CreatorRobot/build'
-export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/duygiang/CreatorRobot/devel/share/common-lisp'
-export ROS_PACKAGE_PATH='/home/duygiang/CreatorRobot/src:/opt/ros/noetic/share'
+export ROS_PACKAGE_PATH="/home/duygiang/CreatorRobot/src:$ROS_PACKAGE_PATH"

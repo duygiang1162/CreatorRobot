@@ -1,2 +1,2 @@
-export5_URDF:my_mira_description
+export5_URDF:keep_leg_export
 -DCATKIN_DEVEL_PREFIX=/home/duygiang/CreatorRobot/devel -DCMAKE_INSTALL_PREFIX=/home/duygiang/CreatorRobot/install -G Unix Makefiles

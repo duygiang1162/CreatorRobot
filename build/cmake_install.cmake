@@ -132,7 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/duygiang/CreatorRobot/build/gtest/cmake_install.cmake")
   include("/home/duygiang/CreatorRobot/build/export5_URDF/cmake_install.cmake")
-  include("/home/duygiang/CreatorRobot/build/my_mira_description/cmake_install.cmake")
+  include("/home/duygiang/CreatorRobot/build/keep_leg_export/cmake_install.cmake")
 
 endif()
 

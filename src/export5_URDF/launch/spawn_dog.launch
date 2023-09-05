@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find export5_URDF)/launch/spawn_urdf.launch">
+        <arg name="x" value="0.0" />
+        <arg name="y" value="0.0" />
+        <arg name="z" value="0.2" />
+        <arg name="robot_file_name" value="$(find export5_URDF)/urdf/keep_leg_export.urdf" />
+        <arg name="robot_name" value="spot_dog" />
+    </include>
+</launch>

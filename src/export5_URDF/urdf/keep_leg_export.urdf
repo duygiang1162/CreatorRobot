@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="keep_leg_export">
+  <link name="base_footprint">
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00247901953769958 -7.72684605193641E-06 -0.0100192436381341"
+        rpy="0 0 0" />
+      <mass
+        value="1.38302095240476" />
+      <!-- <inertia
+        ixx="0.00172933115832841"
+        ixy="-9.10846175656718E-09"
+        ixz="7.65344507485944E-16"
+        iyy="0.00128903116695136"
+        iyz="-1.46641625216886E-16"
+        izz="0.00281036572892926" />
+    </inertial> -->
+    <inertia
+    ixx="0"
+    ixy="0"
+    ixz="0"
+    iyy="0"
+    iyz="0"
+    izz="0" />
+</inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <kp>100000.0</kp>
+    <kd>100000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Grey</material>
+</gazebo>
+<joint name="base_joint" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+</joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0.00577544245185518 0.000608180456644347 -0.0195616906884153"
+        rpy="0 0 0" />
+      <mass
+        value="0.142994095653187" />
+      <inertia
+        ixx="4.62767161181515E-05"
+        ixy="-8.53572518984279E-07"
+        ixz="3.62184026396535E-06"
+        iyy="7.34746440088866E-05"
+        iyz="-2.04304178805651E-07"
+        izz="0.000107960183716792" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="lidar_link">
+    <kp>100000.0</kp>
+    <kd>100000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.00316383682030741 -0.000113075355854753 0.044"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rf_hip_link">
+    <inertial>
+      <origin
+        xyz="0.051105 -0.0064092 -0.0065636"
+        rpy="0 0 0" />
+      <mass
+        value="0.301" />
+      <inertia
+        ixx="0.00010685"
+        ixy="1.0881E-09"
+        ixz="8.9008E-09"
+        iyy="0.00024948"
+        iyz="1.3484E-05"
+        izz="0.00024351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rf_hip_link">
+    <kp>100000.0</kp>
+    <kd>100000.0</kd>
+    <mu1>10.0</mu1>
+    <mu2>10.0</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <joint
+    name="rf_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.1325 -0.0798899999999288 -0.0292976400492969"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0668128326099894 -0.000201076465554229 -0.0492390564779382"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446459752499" />
+      <inertia
+        ixx="4.55350835364376E-05"
+        ixy="-9.11870718885064E-07"
+        ixz="-5.53553247981242E-05"
+        iyy="0.000129422913083595"
+        iyz="-7.2935535177326E-07"
+        izz="8.5181340447565E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.027 -0.054174 0.014192"
+      rpy="0 0 0" />
+    <parent
+      link="rf_hip_link" />
+    <child
+      link="rf_h_upper_link" />
+    <axis
+      xyz="0 -0.99986 0.016471" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_h_mid_link">
+    <inertial>
+      <origin
+        xyz="0.0967787580032495 -0.00591180665409269 0.00714491110814697"
+        rpy="0 0 0" />
+      <mass
+        value="0.117810135038864" />
+      <inertia
+        ixx="0.000107230602958208"
+        ixy="-7.13769881469904E-06"
+        ixz="1.17570140272495E-07"
+        iyy="0.000106572345085072"
+        iyz="1.75375221105353E-06"
+        izz="0.000212982544775332" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_h_mid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_h_mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_h_mid_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11118 0.0049977 -0.08518"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rf_h_upper_link" />
+    <child
+      link="rf_h_mid_link" />
+    <axis
+      xyz="0 -0.016471 -0.99986" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00374869467623781 0.000142004827704434 0.0086208534369171"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346012022141" />
+      <inertia
+        ixx="1.04864883240922E-05"
+        ixy="4.72357605320845E-08"
+        ixz="2.86716749339522E-06"
+        iyy="1.40272111217805E-05"
+        iyz="-1.35937584431514E-07"
+        izz="5.77698064579112E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rf_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.087095239330567 -0.137683587188068 0.0136696417281597"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="rf_h_mid_link" />
+    <child
+      link="rf_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rh_hip_link">
+    <inertial>
+      <origin
+        xyz="-0.051107 -0.0062566 -0.0067091"
+        rpy="0 0 0" />
+      <mass
+        value="0.301" />
+      <inertia
+        ixx="0.00010685"
+        ixy="8.7515E-10"
+        ixz="9.633E-09"
+        iyy="0.00024886"
+        iyz="1.3612E-05"
+        izz="0.00024413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1325 -0.0798900000000005 -0.0292976400491653"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rh_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0668128321368548 0.000930459071025569 -0.0492306746282527"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446460508965" />
+      <inertia
+        ixx="4.55350835382334E-05"
+        ixy="3.60400382732239E-07"
+        ixz="-5.53616618595437E-05"
+        iyy="0.000129433062665089"
+        iyz="2.87789798758398E-07"
+        izz="8.51711908871302E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="-0.072 -0.054485 0.012943"
+      rpy="0 0 0" />
+    <parent
+      link="rh_hip_link" />
+    <child
+      link="rh_h_upper_link" />
+    <axis
+      xyz="0 -0.99998 -0.0065096" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_h_mid_link">
+    <inertial>
+      <origin
+        xyz="0.0967787584470181 -0.00607443045088757 0.00700717474401957"
+        rpy="0 0 0" />
+      <mass
+        value="0.117810135921722" />
+      <inertia
+        ixx="0.000107230602962527"
+        ixy="-7.13851571083036E-06"
+        ixz="-4.64807153561258E-08"
+        iyy="0.00010654795619169"
+        iyz="-6.9269327687283E-07"
+        izz="0.000213006933683945" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_h_mid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_h_mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_h_mid_joint"
+    type="revolute">
+    <origin
+      xyz="-0.111177016312381 0.00695374120469172 -0.0850427923291257"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="rh_h_upper_link" />
+    <child
+      link="rh_h_mid_link" />
+    <axis
+      xyz="0 0.00650959189271841 -0.999978812382238" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rh_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00374869468568095 -5.61344255121665E-05 0.00862184018063239"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346011874611" />
+      <inertia
+        ixx="1.04864883148301E-05"
+        ixy="-1.86624067397946E-08"
+        ixz="2.86749584033282E-06"
+        iyy="1.40291004399198E-05"
+        iyz="5.37409927361688E-08"
+        izz="5.77509132612842E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/rh_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rh_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.087095 -0.13796 0.010502"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="rh_h_mid_link" />
+    <child
+      link="rh_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lf_hip_link">
+    <inertial>
+      <origin
+        xyz="0.051135 0.0063442 -0.0066265"
+        rpy="0 0 0" />
+      <mass
+        value="0.301" />
+      <inertia
+        ixx="0.00010685"
+        ixy="9.9684E-10"
+        ixz="-9.621E-09"
+        iyy="0.00024922"
+        iyz="-1.3542E-05"
+        izz="0.00024377" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.1325 0.07989 -0.029298"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lf_hip_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.0589927944433671 -0.00022376998211901 -0.0583805574455977"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446460117747" />
+      <inertia
+        ixx="6.22033266932145E-05"
+        ixy="3.88448082434307E-07"
+        ixz="-5.87170529724645E-05"
+        iyy="0.000129432262514428"
+        iyz="4.03439937117398E-07"
+        izz="6.85037478736184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0270000000000012 0.0543108423095625 0.0136572192815013"
+      rpy="0 0 0" />
+    <parent
+      link="lf_hip_link" />
+    <child
+      link="lf_h_upper_link" />
+    <axis
+      xyz="0 0.999978118921482 0.00661526101179911" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_h_mid_link">
+    <inertial>
+      <origin
+        xyz="0.103683711340637 -0.0132836715310574 -0.0160416576255014"
+        rpy="0 0 0" />
+      <mass
+        value="0.117810135956518" />
+      <inertia
+        ixx="9.11042914626449E-05"
+        ixy="8.30285013750505E-06"
+        ixz="5.49389299838501E-08"
+        iyy="0.000122673718941518"
+        iyz="-5.97974353460945E-07"
+        izz="0.000213007482434997" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_h_mid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_h_mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_h_mid_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0977077682679453 0.0172629199373165 -0.100153600111701"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="lf_h_upper_link" />
+    <child
+      link="lf_h_mid_link" />
+    <axis
+      xyz="0 -0.00661526101178917 0.999978118921482" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00620125999523694 -4.67563553129824E-05 0.00706641170175271"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346003330871" />
+      <inertia
+        ixx="8.38077902670286E-06"
+        ixy="-2.44931975928253E-08"
+        ixz="3.70267977694991E-06"
+        iyy="1.40291809776997E-05"
+        iyz="4.06849555311775E-08"
+        izz="7.88071962868401E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lf_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.125023535101254 0.104804410909571 -0.0109069301220405"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="lf_h_mid_link" />
+    <child
+      link="lf_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lh_hip_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_hip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_hip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1325 0.0798899999999997 -0.0292976400491652"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lh_hip_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_h_upper_link">
+    <inertial>
+      <origin
+        xyz="-0.058992795180726 0.00181321537534801 -0.0583528224949297"
+        rpy="0 0 0" />
+      <mass
+        value="0.108446458753431" />
+      <inertia
+        ixx="6.22033266883486E-05"
+        ixy="2.43680055484232E-06"
+        ixz="-5.86677526732737E-05"
+        iyy="0.000129329962807109"
+        iyz="2.52690861222676E-06"
+        izz="6.86060475531218E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_h_upper_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_h_upper_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_h_upper_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0719999999999993 0.0538012882192341 0.0155437645642256"
+      rpy="0 0 0" />
+    <parent
+      link="lh_hip_link" />
+    <child
+      link="lh_h_upper_link" />
+    <axis
+      xyz="0 0.999138519046251 0.0414996356377259" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_h_mid_link">
+    <inertial>
+      <origin
+        xyz="0.103683711663426 -0.0127159050000401 -0.0164953476231891"
+        rpy="0 0 0" />
+      <mass
+        value="0.11781013696499" />
+      <inertia
+        ixx="9.11042914666682E-05"
+        ixy="8.29587849784415E-06"
+        ixz="3.44584982645921E-07"
+        iyy="0.000122825378322347"
+        iyz="-3.74626943283949E-06"
+        izz="0.000212855823065441" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_h_mid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_h_mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_h_mid_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0977077682679453 0.0207466855887738 -0.0994903365014819"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="lh_h_upper_link" />
+    <child
+      link="lh_h_mid_link" />
+    <axis
+      xyz="0 -0.0414996356377216 0.999138519046251" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lh_foot_link">
+    <inertial>
+      <origin
+        xyz="-0.00620125999919496 -0.000293269095868104 0.00706047828477646"
+        rpy="0 0 0" />
+      <mass
+        value="0.0383346003235047" />
+      <inertia
+        ixx="8.3807790193781E-06"
+        ixy="-1.53661693249376E-07"
+        ixz="3.69957099263319E-06"
+        iyy="1.40188595348517E-05"
+        iyz="2.54969993924934E-07"
+        izz="7.89104107147032E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://keep_leg_export/meshes/lh_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lh_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.125023535101254 0.105121138389276 -0.00724375141289846"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="lh_h_mid_link" />
+    <child
+      link="lh_foot_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

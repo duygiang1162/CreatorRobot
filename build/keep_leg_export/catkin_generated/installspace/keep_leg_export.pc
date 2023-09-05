@@ -1,0 +1,8 @@
+prefix=/home/duygiang/CreatorRobot/install
+
+Name: keep_leg_export
+Description: Description of keep_leg_export
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
