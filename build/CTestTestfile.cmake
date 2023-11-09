@@ -5,5 +5,4 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("export5_URDF")
-subdirs("keep_leg_export")
+subdirs("spot_dog_last")

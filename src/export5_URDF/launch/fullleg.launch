@@ -3,7 +3,7 @@
       name="model" />
     <param
       name="robot_description"
-      textfile="$(find export5_URDF)/urdf/keep_leg_export.urdf" />
+      textfile="$(find export5_URDF)/urdf/clone_urdf.urdf" />
     <node
       name="joint_state_publisher_gui"
       pkg="joint_state_publisher_gui"

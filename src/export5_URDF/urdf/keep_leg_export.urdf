@@ -4,39 +4,17 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="keep_leg_export">
-  <link name="base_footprint">
-  </link>
-  <link
-    name="base_link">
-    <inertial>
-      <origin
-        xyz="0.00247901953769958 -7.72684605193641E-06 -0.0100192436381341"
-        rpy="0 0 0" />
-      <mass
-        value="1.38302095240476" />
-      <!-- <inertia
-        ixx="0.00172933115832841"
-        ixy="-9.10846175656718E-09"
-        ixz="7.65344507485944E-16"
-        iyy="0.00128903116695136"
-        iyz="-1.46641625216886E-16"
-        izz="0.00281036572892926" />
-    </inertial> -->
-    <inertia
-    ixx="0"
-    ixy="0"
-    ixz="0"
-    iyy="0"
-    iyz="0"
-    izz="0" />
-</inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+  <link name="base_link">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://keep_leg_export/meshes/base_link.STL" />
+        <mesh filename="package://keep_leg_export/meshes/base_link.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://keep_leg_export/meshes/base_link.STL" scale="1 1 1"/>
       </geometry>
       <material
         name="">
@@ -44,16 +22,20 @@
           rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://keep_leg_export/meshes/base_link.STL" />
-      </geometry>
-    </collision>
   </link>
+  <link name="base_inertia">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0008166666666666667" ixy="0.0" ixz="0.0" iyy="0.0036096666666666673" iyz="0.0" izz="0.0036096666666666673"/>
+    </inertial>
+  </link>
+  <joint name="base_link_to_base_inertia" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_inertia"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
   <gazebo reference="base_link">
     <kp>100000.0</kp>
     <kd>100000.0</kd>
@@ -61,10 +43,6 @@
     <mu2>10.0</mu2>
     <material>Gazebo/Grey</material>
 </gazebo>
-<joint name="base_joint" type="fixed">
-  <parent link="base_footprint"/>
-  <child link="base_link"/>
-</joint>
   <link
     name="lidar_link">
     <inertial>
